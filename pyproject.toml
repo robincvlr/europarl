@@ -5,7 +5,7 @@ description = "A Python HTTP client for accessing and analyzing European Parliam
 authors = ["robincvlr"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "src" }]
+packages = [{ include = "europarl", from = "src" }]
 keywords = ["european parliament", "http client", "data analysis"]
 homepage = "https://github.com/robincvlr/europarlpy"
 repository = "https://github.com/robincvlr/europarlpy"
@@ -19,6 +19,7 @@ aiohttp = "^3.9.5"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0"
+pytest-asyncio = "^0.23.0"
 pytest-cov = "^5.0"
 ruff = "^0.4.4"
 black = "^24.4"
@@ -36,6 +37,9 @@ build_command = "poetry build"
 branch = "main"
 changelog_file = "CHANGELOG.md"
 commit_author = "semantic-release"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
 
 [build-system]
 requires = ["poetry-core>=1.6.0"]
