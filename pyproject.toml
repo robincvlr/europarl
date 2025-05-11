@@ -5,7 +5,7 @@ description = "A Python HTTP client for accessing and analyzing European Parliam
 authors = ["robincvlr"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "europarl" }]
+packages = [{ include = "src" }]
 keywords = ["european parliament", "http client", "data analysis"]
 homepage = "https://github.com/robincvlr/europarlpy"
 repository = "https://github.com/robincvlr/europarlpy"
