@@ -1,10 +1,11 @@
 import uuid
 from re import sub
+from typing import Tuple
 
 import aiohttp
 
 
-def to_kebab(s):
+def to_kebab(s: str) -> str:
     return "-".join(
         sub(
             r"(\s|_|-)+",
@@ -34,8 +35,13 @@ class EuroparlClient:
 
     BASE_URL = "https://data.europarl.europa.eu/api"
 
-    def __init__(self, version="v2"):
-        """Initialize the AsyncEuroparlAPI without starting the aiohttp session."""
+    def __init__(self, version: str = "v2"):
+        """
+        Initialize the EuroparlClient without starting the aiohttp session.
+
+        Args:
+            version (str): API version
+        """
         self.session = None
         self.user_agent = str(uuid.uuid4())
         self.version = version
@@ -45,7 +51,7 @@ class EuroparlClient:
         Enter the asynchronous context manager and create the aiohttp session.
 
         Returns:
-            AsyncEuroparlAPI: The initialized API client.
+            EuroparlClient: The initialized API client.
         """
         self.session = aiohttp.ClientSession()
         return self
@@ -61,19 +67,17 @@ class EuroparlClient:
         """
         await self.session.close()
 
-    async def get(self, query: str, limit=10, offset=0, **kwargs):
+    async def get(self, query: str, **kwargs) -> Tuple[int, dict]:
         """
         Retrieve a list of available datasets from the API.
 
         Args:
             query (str): European Parliament API query
-            limit (int): Maximum number of datasets to retrieve. Default is 10.
-            offset (int): Number of datasets to skip for pagination. Default is 0.
             **kwargs: Additional query parameters to include in the request.
 
         Returns:
             int: HTTP status code
-            dict: A Response object.
+            dict: A Response object json
         """
         url = f"{self.BASE_URL}/{self.version}/{query}"
         params_norm = {to_kebab(k): v for k, v in kwargs.items()}
