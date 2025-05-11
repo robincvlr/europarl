@@ -29,18 +29,14 @@ jobs:
       - name: Install dependencies
         run: |
           python -m venv .venv
-          . .venv/bin/activate
+          source .venv/bin/activate
           pip install --upgrade pip
           pip install poetry
           poetry install --with dev
 
-      - name: Install pre-commit
-        run: |
-          poetry add --dev pre-commit
-
       - name: Run pre-commit hooks
         run: |
-          . .venv/bin/activate
+          source .venv/bin/activate
           poetry run pre-commit run --all-files
 
   test:
@@ -60,12 +56,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m venv .venv
-          . .venv/bin/activate
+          source .venv/bin/activate
           pip install --upgrade pip
           pip install poetry
           poetry install --with dev
 
       - name: Run pytest
         run: |
-          . .venv/bin/activate
-          poetry run pytest --maxfail=1 --disable-warnings -q
+          source .venv/bin/activate
+          poetry run pytest
