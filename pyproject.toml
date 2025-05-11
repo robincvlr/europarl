@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "europarl"
+version = "0.0.0"  # Managed by semantic-release
+description = "A Python HTTP client for accessing and analyzing European Parliament data"
+authors = ["robincvlr"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "europarl" }]
+keywords = ["european parliament", "http client", "data analysis"]
+homepage = "https://github.com/robincvlr/europarlpy"
+repository = "https://github.com/robincvlr/europarlpy"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+httpx = "^0.25.0"
+pydantic = "^2.0"
+pandas = "^2.2.2"
+aiohttp = "^3.9.5"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+ruff = "^0.4.4"
+black = "^24.4"
+isort = "^5.13.2"
+python-semantic-release = "^8.0.0"
+pre-commit = "^3.6.0"
+build = "^1.0.3"
+
+[tool.semantic_release]
+version_variable = ["europarlpy/__init__.py:__version__"]
+version_source = "tag"
+upload_to_pypi = true
+upload_to_release = true
+build_command = "poetry build"
+branch = "main"
+changelog_file = "CHANGELOG.md"
+commit_author = "semantic-release"
+
+[build-system]
+requires = ["poetry-core>=1.6.0"]
+build-backend = "poetry.core.masonry.api"

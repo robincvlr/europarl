@@ -1,0 +1,69 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  lint:
+    name: Check Code Formatting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          pip install --upgrade pip
+          pip install poetry
+          poetry install --no-dev  # Install without dev dependencies
+
+      - name: Install pre-commit
+        run: |
+          poetry add --dev pre-commit  # Install pre-commit if not added by poetry
+
+      - name: Run pre-commit hooks
+        run: |
+          . .venv/bin/activate
+          poetry run pre-commit run --all-files
+
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    needs: lint
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          pip install --upgrade pip
+          pip install poetry
+          poetry install  # Install all dependencies including dev
+
+      - name: Run pytest
+        run: |
+          . .venv/bin/activate
+          poetry run pytest --maxfail=1 --disable-warnings -q  # Run tests with pytest
