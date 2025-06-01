@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "europarl"
-version = "0.0.0"  # Managed by semantic-release
+version = "0.0.0"
 description = "A Python HTTP client for accessing and analyzing European Parliament data"
 authors = ["robincvlr"]
 license = "MIT"
 readme = "README.md"
 packages = [{ include = "europarl", from = "src" }]
 keywords = ["european parliament", "http client", "data analysis"]
-homepage = "https://github.com/robincvlr/europarlpy"
-repository = "https://github.com/robincvlr/europarlpy"
+homepage = "https://github.com/robincvlr/europarl"
+repository = "https://github.com/robincvlr/europarl"
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -29,7 +29,7 @@ pre-commit = "^3.6.0"
 build = "^1.0.3"
 
 [tool.semantic_release]
-version_variable = ["europarlpy/__init__.py:__version__"]
+version_variable = ["src/europarl/__init__.py:__version__"]
 version_source = "tag"
 upload_to_pypi = true
 upload_to_release = true
