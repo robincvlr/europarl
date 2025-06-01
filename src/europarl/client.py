@@ -28,7 +28,7 @@ class EuroparlClient:
     into pandas DataFrames.
 
     Example:
-        async with AsyncEuroparlAPI() as api:
+        async with EuroparlClient() as api:
             datasets = await api.get_datasets()
             df = await api.dataset_to_dataframe("example-dataset-id")
     """
