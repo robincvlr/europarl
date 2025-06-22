@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/robincvlr/europarl/compare/v0.1.1...v0.1.2) (2025-06-22)
+
+
+### Documentation
+
+* correction in readme ([fe40054](https://github.com/robincvlr/europarl/commit/fe40054ad83720c4418036ec06a364a8b7fe0db1))
+
 ## [0.1.1](https://github.com/robincvlr/europarl/compare/v0.1.0...v0.1.1) (2025-06-22)
 
 

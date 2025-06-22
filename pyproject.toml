@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "europarl"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Python HTTP client for accessing and analyzing European Parliament data"
 authors = ["robincvlr"]
 license = "MIT"
