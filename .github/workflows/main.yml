@@ -99,6 +99,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name "semantic release <europarl>"
+          git config --global user.name "semantic release"
+          git config --global user.email "${{ secrets.SEMANTIC_RELEASE_EMAIL_ADDRESS }}"
           source .venv/bin/activate
           semantic-release publish
