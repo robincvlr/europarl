@@ -1,6 +1,11 @@
 # europarl
 Python client for accessing and analyzing European Parliament data
 
+[![Build](https://github.com/robincvlr/europarl/actions/workflows/main.yml/badge.svg)](https://github.com/robincvlr/europarl/actions/workflows/main.yml)
+
+## Motivations
+Building a Python wrapper to access the European Parliament's Europarl API is a powerful step toward democratizing access to legislative data and fostering transparency in European governance. By simplifying and streamlining the process of querying parliamentary information, such as debates, documents, voting records, and member data, this wrapper can empower researchers, journalists, civic tech developers, and engaged citizens alike.
+
 ## Europarl Swagger
 https://data.europarl.europa.eu/en/developer-corner/opendata-api
 
