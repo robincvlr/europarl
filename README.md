@@ -10,7 +10,7 @@ Building a Python wrapper to access the European Parliament's Europarl API is a 
 https://data.europarl.europa.eu/en/developer-corner/opendata-api
 
 ## Installation
-`pip install https://github.com/robincvlr/europarl.git`
+`pip install git+https://github.com/robincvlr/europarl.git`
 
 ## Example
 ```
