@@ -12,9 +12,6 @@ repository = "https://github.com/robincvlr/europarl"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-httpx = "^0.25.0"
-pydantic = "^2.0"
-pandas = "^2.2.2"
 aiohttp = "^3.9.5"
 
 [tool.poetry.group.dev.dependencies]
@@ -31,7 +28,7 @@ build = "^1.0.3"
 [tool.semantic_release]
 version_variable = ["src/europarl/__init__.py:__version__"]
 version_source = "tag"
-upload_to_pypi = true
+upload_to_pypi = false
 upload_to_release = true
 build_command = "poetry build"
 branch = "main"
