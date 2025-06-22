@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/robincvlr/europarl/compare/v0.1.0...v0.1.1) (2025-06-22)
+
+
+### Documentation
+
+* add content to readme badge and motivations ([#2](https://github.com/robincvlr/europarl/issues/2)) ([52a0cc2](https://github.com/robincvlr/europarl/commit/52a0cc29d7ae6fd87a7388c38f1f573e048747a4))
+
 ## 0.1.0 (2025-06-22)
 
 
