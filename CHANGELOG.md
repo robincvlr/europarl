@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.3](https://github.com/robincvlr/europarl/compare/v0.1.2...v0.1.3) (2025-08-01)
+
+
+### Bug Fixes
+
+* missing artifacts pypi publication ([c4d431d](https://github.com/robincvlr/europarl/commit/c4d431d3fb60df8abff07729e0803a3bf02485f8))
+* missing artifacts pypi publication ([1426f59](https://github.com/robincvlr/europarl/commit/1426f59f5e6e25280796e30266fe0e902934898f))
+
 ## [0.1.2](https://github.com/robincvlr/europarl/compare/v0.1.1...v0.1.2) (2025-06-22)
 
 
