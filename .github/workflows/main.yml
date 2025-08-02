@@ -99,6 +99,28 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: python
 
+  PyPi:
+    runs-on: ubuntu-latest
+    needs:
+      - release
+    if: github.actor == 'github-actions[bot]'
+    permissions:
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install poetry
+
       - name: Build dists
         run: |
           poetry install --no-root
@@ -110,14 +132,6 @@ jobs:
           name: release-dists
           path: dist/
 
-  PyPi:
-    runs-on: ubuntu-latest
-    needs:
-      - release
-    permissions:
-      id-token: write
-
-    steps:
       - name: Retrieve release distributions
         uses: actions/download-artifact@v4
         with:
